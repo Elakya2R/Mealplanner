@@ -1,0 +1,31 @@
+.footer {
+    background-color: $dark-color;
+    color: white;
+    padding: $spacing-lg 0;
+    margin-top: auto;
+  
+    &-content {
+      max-width: $breakpoint-xl;
+      margin: 0 auto;
+      padding: 0 $spacing-md;
+      text-align: center;
+    }
+  
+    &-links {
+      margin-top: $spacing-md;
+      
+      a {
+        margin: 0 $spacing-sm;
+        transition: $transition-base;
+  
+        &:hover {
+          color: $accent-color;
+        }
+      }
+    }
+  
+    p {
+      margin-bottom: $spacing-xs;
+      font-size: 0.9rem;
+    }
+  }

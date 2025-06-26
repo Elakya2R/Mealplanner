@@ -1,0 +1,42 @@
+.header {
+    background: linear-gradient(135deg, $primary-color, $secondary-color);
+    color: white;
+    padding: $spacing-lg 0;
+    box-shadow: $box-shadow-sm;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  
+    &-container {
+      max-width: $breakpoint-xl;
+      margin: 0 auto;
+      padding: 0 $spacing-md;
+      @include flex-between;
+    }
+  
+    .logo {
+      h1 {
+        font-size: 1.8rem;
+        margin-bottom: $spacing-xs;
+      }
+  
+      .tagline {
+        font-size: 0.9rem;
+        opacity: 0.9;
+      }
+    }
+  
+    .nav {
+      &-link {
+        margin-left: $spacing-lg;
+        font-weight: 500;
+        transition: $transition-base;
+        padding: $spacing-xs $spacing-sm;
+        border-radius: $border-radius-sm;
+  
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+  }

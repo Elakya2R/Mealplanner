@@ -1,0 +1,69 @@
+.planner-page {
+    .planner-controls {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: $spacing-lg;
+      flex-wrap: wrap;
+      gap: $spacing-md;
+  
+      .back-button {
+        @extend .btn;
+        @extend .btn-outline;
+      }
+  
+      .grocery-list-toggle {
+        @extend .btn;
+        @extend .btn-primary;
+      }
+    }
+  
+    .weekly-planner-container {
+      .planner-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: $spacing-lg;
+  
+        h2 {
+          color: $secondary-color;
+        }
+  
+        .preferences-toggle {
+          @extend .btn;
+          @extend .btn-outline;
+        }
+      }
+  
+      .days-navigation {
+        display: flex;
+        gap: $spacing-xs;
+        margin-bottom: $spacing-lg;
+        overflow-x: auto;
+        padding-bottom: $spacing-xs;
+  
+        .day-button {
+          @extend .btn;
+          background-color: white;
+          border: 1px solid #ddd;
+          color: $dark-color;
+          min-width: 60px;
+  
+          &.active {
+            background-color: $primary-color;
+            color: white;
+            border-color: $primary-color;
+          }
+        }
+      }
+  
+      .selected-meal-view {
+        margin-bottom: $spacing-lg;
+      }
+  
+      .weekly-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: $spacing-lg;
+      }
+    }
+  }

@@ -1,0 +1,117 @@
+.home-page {
+    .hero-section {
+      text-align: center;
+      padding: $spacing-xl 0;
+      background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+                  url('https://images.unsplash.com/photo-1547592180-85f173990554') center/cover;
+      border-radius: $border-radius;
+      margin-bottom: $spacing-xl;
+  
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: $spacing-md;
+        color: $secondary-color;
+      }
+  
+      .subtitle {
+        font-size: 1.2rem;
+        margin-bottom: $spacing-xl;
+        color: $dark-color;
+      }
+  
+      .cta-button {
+        @extend .btn;
+        @extend .btn-accent;
+        @extend .btn-lg;
+      }
+    }
+  
+    .features-section {
+      margin-bottom: $spacing-xl;
+  
+      h2 {
+        text-align: center;
+        margin-bottom: $spacing-xl;
+        color: $secondary-color;
+      }
+  
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: $spacing-lg;
+      }
+  
+      .feature-card {
+        background: white;
+        padding: $spacing-lg;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow-sm;
+        transition: $transition-base;
+        text-align: center;
+  
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: $box-shadow;
+        }
+  
+        .feature-icon {
+          font-size: 2rem;
+          margin-bottom: $spacing-md;
+        }
+  
+        h3 {
+          color: $primary-color;
+          margin-bottom: $spacing-sm;
+        }
+  
+        p {
+          color: lighten($dark-color, 20%);
+        }
+      }
+    }
+  
+    .how-it-works {
+      background: white;
+      padding: $spacing-xl;
+      border-radius: $border-radius;
+      box-shadow: $box-shadow-sm;
+      margin-bottom: $spacing-xl;
+  
+      h2 {
+        text-align: center;
+        margin-bottom: $spacing-lg;
+        color: $secondary-color;
+      }
+  
+      .steps {
+        max-width: 600px;
+        margin: 0 auto $spacing-xl;
+        padding-left: $spacing-lg;
+  
+        li {
+          margin-bottom: $spacing-md;
+          position: relative;
+          padding-left: $spacing-md;
+  
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 8px;
+            height: 8px;
+            background-color: $accent-color;
+            border-radius: 50%;
+          }
+        }
+      }
+  
+      .secondary-button {
+        @extend .btn;
+        @extend .btn-outline;
+        display: block;
+        max-width: 200px;
+        margin: 0 auto;
+      }
+    }
+  }

@@ -1,0 +1,35 @@
+.container {
+    width: 100%;
+    max-width: $breakpoint-xl;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+  }
+  
+  .grid {
+    display: grid;
+    gap: $spacing-md;
+  
+    &-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    &-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    &-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  @include respond-to($breakpoint-md) {
+    .grid-md-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @include respond-to($breakpoint-lg) {
+    .grid-lg-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
