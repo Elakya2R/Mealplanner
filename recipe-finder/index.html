@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder - Discover Delicious Recipes</title>
+    <meta name="description" content="Find and discover amazing recipes with our modern recipe finder application. Search by ingredients, cuisine, or dietary preferences.">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-utensils"></i>
+                    <span>Recipe Finder</span>
+                </div>
+                <nav class="nav">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#recipes" class="nav-link">Recipes</a>
+                    <a href="#favorites" class="nav-link">Favorites</a>
+                    <a href="#about" class="nav-link">About</a>
+                </nav>
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Discover Amazing Recipes</h1>
+                <p class="hero-subtitle">Find the perfect recipe for any occasion with our comprehensive recipe finder</p>
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="recipe-search" placeholder="Search recipes, ingredients, or cuisine..." class="search-input">
+                        <button class="search-btn" id="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section" id="recipes">
+        <div class="container">
+            <div class="filters-container">
+                <h2 class="section-title">Filter Recipes</h2>
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="cuisine-filter">Cuisine:</label>
+                        <select id="cuisine-filter" class="filter-select">
+                            <option value="">All Cuisines</option>
+                            <option value="italian">Italian</option>
+                            <option value="mexican">Mexican</option>
+                            <option value="asian">Asian</option>
+                            <option value="american">American</option>
+                            <option value="mediterranean">Mediterranean</option>
+                            <option value="indian">Indian</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="diet-filter">Diet:</label>
+                        <select id="diet-filter" class="filter-select">
+                            <option value="">All Diets</option>
+                            <option value="vegetarian">Vegetarian</option>
+                            <option value="vegan">Vegan</option>
+                            <option value="gluten-free">Gluten Free</option>
+                            <option value="keto">Keto</option>
+                            <option value="paleo">Paleo</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="time-filter">Cooking Time:</label>
+                        <select id="time-filter" class="filter-select">
+                            <option value="">Any Time</option>
+                            <option value="15">Under 15 min</option>
+                            <option value="30">Under 30 min</option>
+                            <option value="60">Under 1 hour</option>
+                            <option value="120">Under 2 hours</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="difficulty-filter">Difficulty:</label>
+                        <select id="difficulty-filter" class="filter-select">
+                            <option value="">All Levels</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+                    <button class="clear-filters-btn" id="clear-filters">
+                        <i class="fas fa-times"></i>
+                        Clear Filters
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section">
+        <div class="container">
+            <div class="results-header">
+                <h2 class="section-title">Recipes</h2>
+                <div class="results-info">
+                    <span id="results-count">24 recipes found</span>
+                    <div class="view-toggle">
+                        <button class="view-btn active" data-view="grid">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="recipes-grid" id="recipes-container">
+                <!-- Recipe cards will be dynamically inserted here -->
+            </div>
+            <div class="load-more-container">
+                <button class="load-more-btn" id="load-more">
+                    Load More Recipes
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipe Modal -->
+    <div class="modal-overlay" id="recipe-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body" id="modal-body">
+                <!-- Recipe details will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-utensils"></i>
+                        <span>Recipe Finder</span>
+                    </div>
+                    <p>Discover amazing recipes from around the world</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#recipes">Recipes</a></li>
+                        <li><a href="#favorites">Favorites</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#" data-cuisine="italian">Italian</a></li>
+                        <li><a href="#" data-cuisine="mexican">Mexican</a></li>
+                        <li><a href="#" data-cuisine="asian">Asian</a></li>
+                        <li><a href="#" data-cuisine="american">American</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Recipe Finder. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

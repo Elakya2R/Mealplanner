@@ -1,0 +1,35 @@
+{
+  "name": "recipe-finder",
+  "version": "1.0.0",
+  "description": "A modern frontend recipe finder application with search, filtering, and responsive design",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000",
+    "build": "echo 'Building project...' && echo 'Build complete!'",
+    "dev": "live-server --port=3000 --open=/index.html"
+  },
+  "keywords": [
+    "recipe",
+    "finder",
+    "food",
+    "cooking",
+    "frontend",
+    "javascript",
+    "html",
+    "css"
+  ],
+  "author": "Recipe Finder Team",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/recipe-finder.git"
+  },
+  "homepage": "https://your-username.github.io/recipe-finder/",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
